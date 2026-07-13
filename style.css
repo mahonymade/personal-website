@@ -1,0 +1,113 @@
+/* ============================================
+   style.css — shared by every page on the site
+   ============================================ */
+
+/* Reset: browsers add their own default margins;
+   this wipes them so we start from a clean slate. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* padding counts inside width, not on top of it */
+}
+
+/* Custom properties: name your colors once, reuse everywhere.
+   Change a value here and the whole site updates. */
+:root {
+  --ink: #1a1a1a;        /* main text */
+  --faint: #6b6b6b;      /* secondary text (dates, labels) */
+  --line: #e4e4e4;       /* hairline dividers */
+  --accent: #2f5d50;     /* deep green — links & highlights */
+  --paper: #fcfcfa;      /* background, a hair warmer than pure white */
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.65;               /* breathing room between lines */
+  max-width: 640px;                /* a comfortable reading column */
+  margin: 0 auto;                  /* center that column */
+  padding: 3rem 1.25rem 5rem;      /* space around the edges */
+}
+
+/* ---------- Navigation ---------- */
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+  font-family: -apple-system, 'Segoe UI', Helvetica, sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+nav a {
+  color: var(--faint);
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* Marks the page you're currently on (see aria-current in the HTML) */
+nav a[aria-current="page"] {
+  color: var(--ink);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 2px;
+}
+
+/* ---------- Headings & text ---------- */
+
+h1 {
+  font-size: 2rem;
+  font-weight: normal;   /* serifs look elegant un-bolded at large sizes */
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin: 2.5rem 0 0.75rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--accent);
+}
+
+/* ---------- Reusable pieces ---------- */
+
+/* Small gray metadata line: dates, categories, reading status */
+.meta {
+  font-family: -apple-system, 'Segoe UI', Helvetica, sans-serif;
+  font-size: 0.8rem;
+  color: var(--faint);
+  letter-spacing: 0.02em;
+}
+
+/* An entry = one project, essay, or book.
+   A left border + padding gives a quiet visual grouping. */
+.entry {
+  border-top: 1px solid var(--line);
+  padding: 1.5rem 0;
+}
+
+.entry h2 {
+  margin: 0 0 0.25rem;
+}
+
+.entry p {
+  margin: 0.5rem 0 0;
+}
+
+footer {
+  margin-top: 5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.85rem;
+  color: var(--faint);
+}
