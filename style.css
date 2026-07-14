@@ -71,12 +71,71 @@ h2 {
   margin: 2.5rem 0 0.75rem;
 }
 
+h3 {
+  font-size: 1rem;
+  font-weight: normal;
+  font-style: italic;
+  margin: 1.25rem 0 0.5rem;
+}
+
 p {
   margin-bottom: 1rem;
 }
 
+/* A dash-prefixed list, used for recommendation categories */
+.dash-list {
+  list-style: none;
+  margin: 0 0 1rem;
+}
+
+.dash-list li {
+  position: relative;
+  padding-left: 1.1em;
+  margin-bottom: 0.4rem;
+}
+
+.dash-list li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--faint);
+}
+
 a {
   color: var(--accent);
+}
+
+/* ---------- Essays ---------- */
+
+.essay-meta {
+  margin-bottom: 2rem;
+}
+
+blockquote {
+  border-left: 2px solid var(--line);
+  margin: 0 0 2rem;
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  font-style: italic;
+}
+
+blockquote p {
+  margin-bottom: 0.75rem;
+}
+
+blockquote cite {
+  display: block;
+  font-style: normal;
+  font-family: -apple-system, 'Segoe UI', Helvetica, sans-serif;
+  font-size: 0.8rem;
+  color: var(--faint);
+}
+
+/* MLA-style Works Cited: hanging indent via negative text-indent */
+.citations p {
+  padding-left: 1.5em;
+  text-indent: -1.5em;
+  font-size: 0.9rem;
+  margin-bottom: 0.85rem;
 }
 
 /* ---------- Reusable pieces ---------- */
@@ -102,6 +161,19 @@ a {
 
 .entry p {
   margin: 0.5rem 0 0;
+}
+
+.entry-image {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  border-radius: 4px;
+  margin: 0.75rem 0;
+}
+
+.entry-image--wide {
+  max-width: 420px;
 }
 
 footer {
